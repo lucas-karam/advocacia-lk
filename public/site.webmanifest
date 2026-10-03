@@ -1,0 +1,26 @@
+{
+  "name": "Lucas Karam | Direito Digital",
+  "short_name": "Lucas Karam",
+  "start_url": "/?utm_source=pwa",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "description": "Advocacia especializada em Direito Digital e crimes cibernéticos.",
+  "icons": [
+    {
+      "src": "/cnj-lucas-karam.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/cnj-lucas-karam.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://lucaskaram.com.br/wp-content/uploads/2024/01/Lucas-karam.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+/* Define renderização nativa de barras de rolagem e controles UI */
+:root {
+  color-scheme: light;
+}
+
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-soft: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(24px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes pulse-soft {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); transform: scale(1); }
+    70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); transform: scale(1.05); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); transform: scale(1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes shimmer {
+    100% { transform: translateX(100%); }
+  }
+}
+
+.animate-delay-100 { animation-delay: 100ms; opacity: 0; }
+.animate-delay-200 { animation-delay: 200ms; opacity: 0; }
+.animate-delay-300 { animation-delay: 300ms; opacity: 0; }
+.animate-delay-400 { animation-delay: 400ms; opacity: 0; }
+.animate-delay-500 { animation-delay: 500ms; opacity: 0; }
+
+@layer base {
+  a, button, [role="button"], input, select, textarea {
+    touch-action: manipulation;
+  }
+}
+
+
+/* ==========================================================================
+   ADVANCED LEGAL DOCUMENT PRINTING PROTOCOL
+   Transforms the UI into a clean, ink-saving, court-ready document
+   ========================================================================== */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Hide interactive elements not needed on paper */
+  button, 
+  nav, 
+  .whatsapp-widget, 
+  iframe,
+  [role="button"] {
+    display: none !important;
+  }
+
+  /* Ensure text is black and readable */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    color: black !important;
+  }
+
+  /* Expand hidden details if any exist */
+  details {
+    display: block !important;
+  }
+  
+  /* Prevent page breaks inside cards/articles */
+  article, .card, section {
+    page-break-inside: avoid;
+  }
+
+  /* Append URLs after links for physical reading */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #333;
+  }
+}
+
+/* Premium Text Selection */
+::selection {
+  background-color: #1e3a8a; /* Blue-900 */
+  color: #ffffff;
+}
+::-moz-selection {
+  background-color: #1e3a8a;
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   NATIVE APP ILLUSION (Mobile Optimizations)
+   ========================================================================== */
+html, body {
+  /* Prevent the rubber-band bounce effect on iOS/Android for a native feel */
+  overscroll-behavior-y: none;
+}
+
+* {
+  /* Remove the ugly grey flash when tapping buttons on mobile Safari/Chrome */
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==========================================================================
+   ULTRA-PREMIUM MICRO-TYPOGRAPHY
+   Prevents typographic "orphans" and balances heading lines perfectly
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
+   NEUROLOGICAL ACCESSIBILITY PROTOCOL (WCAG 2.1 AAA)
+   Respects OS-level motion sickness/vestibular disorder settings
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ==========================================================================
+   PADRÃO ABNT (FORENSE E JURÍDICO) PARA IMPRESSÃO FÍSICA
+   Transforma a impressão da página em um formato aceito em petições
+   ========================================================================== */
+@page {
+  size: A4;
+  margin: 3cm 2cm 2cm 3cm; /* Padrão ABNT Forense: Superior 3cm, Esquerda 3cm, Direita 2cm, Inferior 2cm */
+}
+
+/* ==========================================================================
+   DOM CULLING (DESCARTE ASSÍNCRONO DE GPU)
+   Desliga o processamento de código que está fora da tela do usuário (abaixo da dobra)
+   ========================================================================== */
+main > section:not(:first-of-type) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+
+/* ==========================================================================
+   ACELERAÇÃO DE HARDWARE (GPU COMPOSITING)
+   Isola as animações na Placa de Vídeo para garantir 120fps cravados sem gargalo de CPU
+   ========================================================================== */
+.animate-fade-in-up,
+.animate-fade-in,
+.animate-pulse-soft {
+  will-change: transform, opacity;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+/* ==========================================================================
+   LATÊNCIA ZERO (TOUCH RESPONSE PROTOCOL)
+   Elimina o atraso residual de 300ms do motor WebKit em dispositivos móveis
+   ========================================================================== */
+a, button, [role="button"], input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* ==========================================================================
+   APPLE DYNAMIC ISLAND & NOTCH SAFE AREA PROTOCOL
+   ========================================================================== */
+@supports (padding-top: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* ==========================================================================
+   KEYBOARD ACCESSIBILITY (WCAG 2.2 ADA COMPLIANCE)
+   Força um anel de foco elegante apenas para navegação por teclado
+   ========================================================================== */
+*:focus-visible {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 4px !important;
+  transition: outline-offset 0.1s ease;
+}

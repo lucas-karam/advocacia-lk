@@ -1,0 +1,11 @@
+/* TEAM */
+  Title: Lucas Karam Advocacia e Consultoria
+  Role: Law Firm - Digital Law & Cybercrimes
+  Contact: contato [at] lucaskaram [dot] com [dot] br
+  Location: Brazil (National Practice)
+
+/* SITE */
+  Standards: HTML5, CSS3, ES2022
+  Components: React 19, Tailwind CSS v4, Vite
+  Software: PWA, Service Workers, JSON-LD Semantic Web
+  Security: X-Frame-Options, Permissions-Policy, Anti-Clickjacking

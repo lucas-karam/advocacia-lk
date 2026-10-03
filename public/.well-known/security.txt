@@ -1,0 +1,14 @@
+Contact: https://lucaskaram.com.br/#contato
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: pt-BR, en
+Canonical: https://lucaskaram.com.br/.well-known/security.txt
+Policy: https://lucaskaram.com.br/
+Hiring: https://lucaskaram.com.br/
+Acknowledgments: https://lucaskaram.com.br/
+
+# ===================================================================
+# GRC & DIGITAL LAW COMPLIANCE
+# As a law firm specialized in Digital Law, Cybercrimes, and Data 
+# Privacy (LGPD), we strictly follow the RFC 9116 guidelines for 
+# security disclosures.
+# ===================================================================

@@ -1,0 +1,6 @@
+{
+  "name": "Lucas Karam | Advocacia em Direito Digital",
+  "description": "Assessoria jurídica especializada em crimes cibernéticos, vazamento de conteúdo íntimo, remoção de arquivos e reparação de danos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
